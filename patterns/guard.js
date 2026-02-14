@@ -19,6 +19,21 @@ export function multiply(num1, num2) {
  */
 export function vote(age) {
   // TODO
+  let response;
+  if (typeof age !== "number") {
+    response = "Age not valid.";
+  }
+
+  if (typeof age === "number") {
+    if (age < 18) {
+      response = "You must be 18 or older to vote.";
+    }
+
+    if (age >= 18) {
+      response = "Who would you like to vote for?";
+    }
+  }
+  return response;
 }
 
 /**
@@ -29,4 +44,9 @@ export function vote(age) {
  */
 export function concatenateStrings(str1, str2) {
   // TODO
+  let concat;
+  if (typeof str1 === "string" && typeof str2 === "string") {
+    concat = str1 + str2;
+  }
+  return concat;
 }
