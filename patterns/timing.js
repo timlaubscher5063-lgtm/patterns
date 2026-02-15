@@ -20,6 +20,19 @@ export function isSongInPlaylist(playlist, song) {
  */
 export function isAllEven(numbers) {
   // TODO
+  let even;
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      even = true;
+    }
+
+    if (numbers[i] % 2 !== 0) {
+      even = false;
+      break;
+    }
+  }
+  return even;
 }
 
 /**
@@ -27,10 +40,16 @@ export function isAllEven(numbers) {
  * and each item in the backpack has a category, such as "food", "equipment", or "clothes".
  * Each item in the "food" category is enough to feed one person.
  *
- * @param {{category: string}[]}} backpack
+ * @param {{category: string}[]} backpack
  * @param {number} people
  * @returns {boolean} whether there is enough food in the backpack to feed everyone
  */
 export function haveEnoughFood(backpack, people) {
   // TODO
+  let food = false;
+  let pack = backpack.filter((cat) => cat.category === "food");
+  if (pack.length >= people) {
+    food = true;
+  }
+  return food;
 }
